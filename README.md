@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-the output apk file [here]("https://github.com/prasadbhale05/flutter_hotel_booking_app/tree/main/outputs")
+the output apk file [here]('https://github.com/prasadbhale05/flutter_hotel_booking_app/tree/main/outputs')
 
 ## Getting Started
 
