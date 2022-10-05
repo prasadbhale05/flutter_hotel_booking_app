@@ -46,7 +46,9 @@ class _HotelPreviewPageState extends State<HotelPreviewPage> {
                 leading: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
                       backgroundColor: Colors.white,

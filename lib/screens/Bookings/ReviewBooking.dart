@@ -26,9 +26,16 @@ class _ReviewBookingState extends State<ReviewBooking> {
       appBar: AppBar(
         elevation: 1,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: IconButton(
+          onPressed: () {
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
         title: const Text(
           "Confirm Booking",

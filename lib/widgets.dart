@@ -390,7 +390,9 @@ Widget itemCard(
                       color: pink,
                     ),
                     style: ElevatedButton.styleFrom(
-                      shape: CircleBorder(),
+                      shape: CircleBorder(
+                        side: BorderSide(color: pink),
+                      ),
                       backgroundColor: Colors.white,
                       padding: const EdgeInsets.all(10),
                     ),
@@ -724,74 +726,76 @@ Widget layoutContainer2() {
 }
 
 Widget customNavigationBar(BuildContext context) {
-  return SizedBox(
-    height: 90,
-    child: Container(
+  return SafeArea(
+    child: SizedBox(
       height: 90,
-      width: MediaQuery.of(context).size.width,
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: <Color>[
-            Color.fromRGBO(61, 153, 238, 100),
-            Color.fromRGBO(154, 207, 255, 100),
+      child: Container(
+        height: 90,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: <Color>[
+              Color.fromRGBO(61, 153, 238, 100),
+              Color.fromRGBO(154, 207, 255, 100),
+            ],
+          ),
+        ),
+        child: Stack(
+          children: [
+            const Positioned(
+              left: 10,
+              top: 20,
+              child: Text(
+                "\u{20B9}1,493",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700),
+              ),
+            ),
+            const Positioned(
+              left: 80,
+              top: 30,
+              child: Text(
+                "+ \u{20B9} 594 taxes and fee",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            Positioned(
+              left: 260,
+              top: 10,
+              child: Container(
+                height: 40,
+                width: 130,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+                child: TextButton(
+                  style: TextButton.styleFrom(backgroundColor: Colors.white),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => ReviewBooking())));
+                  },
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
-      ),
-      child: Stack(
-        children: [
-          const Positioned(
-            left: 10,
-            top: 20,
-            child: Text(
-              "\u{20B9}1,493",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-          const Positioned(
-            left: 80,
-            top: 30,
-            child: Text(
-              "+ \u{20B9} 594 taxes and fee",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500),
-            ),
-          ),
-          Positioned(
-            left: 260,
-            top: 10,
-            child: Container(
-              height: 40,
-              width: 130,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-              child: TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => ReviewBooking())));
-                },
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700),
-                ),
-              ),
-            ),
-          ),
-        ],
       ),
     ),
   );

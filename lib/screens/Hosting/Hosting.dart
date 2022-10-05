@@ -14,14 +14,16 @@ class _hostingPageState extends State<hostingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: 800,
-          child: Stack(
-            children: [
-              // roomsCard(),
-              roomsCard(context),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            height: 800,
+            child: Stack(
+              children: [
+                // roomsCard(),
+                roomsCard(context),
+              ],
+            ),
           ),
         ),
       ),

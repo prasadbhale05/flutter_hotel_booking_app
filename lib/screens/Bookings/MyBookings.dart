@@ -18,7 +18,11 @@ class _MyBookingsState extends State<MyBookings> {
         elevation: 0.5,
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
+          },
           icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),

@@ -11,6 +11,8 @@ import 'package:hotel_booking_app/screens/Notifications/Notifications.dart';
 import 'package:hotel_booking_app/styles.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
+int initialIndex = 0;
+
 class initialScreenPage extends StatefulWidget {
   initialScreenPage({Key? key}) : super(key: key);
 
@@ -20,7 +22,7 @@ class initialScreenPage extends StatefulWidget {
 
 class _initialScreenPageState extends State<initialScreenPage> {
   PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
+      PersistentTabController(initialIndex: initialIndex);
 
   @override
   Widget build(BuildContext context) {
@@ -107,4 +109,8 @@ List<PersistentBottomNavBarItem> _navBars() {
       ),
     ),
   ];
+}
+
+int changeIndex(index) {
+  return index;
 }
